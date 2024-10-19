@@ -15,6 +15,9 @@ services:
 
   webapi:
     image: lfhenrl/hhl_testapi:alpine
+    auth:
+          username: lfhenrl
+          password: $Trunte001
     expose:
       - "8080"
 
