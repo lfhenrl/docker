@@ -17,7 +17,7 @@ services:
     image: lfhenrl/hhl_testapi:alpine
     auth:
           username: lfhenrl
-          password: $Trunte001
+          password: Trunte001
     expose:
       - "8080"
 
