@@ -1,0 +1,35 @@
+services:
+  caddy:
+    image: caddy:2.8.4-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./hhlui/dist:/srv/hhlui
+      - ./vueApp/dist:/srv/lotte
+    depends_on:
+      - webapi
+
+  webapi:
+    image: lfhenrl/hhl_testapi:alpine
+    expose:
+      - "8080"
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: unless-stopped
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=abcDEF123#
+      - TZ=Europe/Berlin
+      - MSSQL_PID=Express
+    volumes:
+      - sqldata:/var/opt/mssql
+
+volumes:
+  sqldata:

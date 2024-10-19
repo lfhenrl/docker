@@ -1,0 +1,22 @@
+
+localhost {
+    encode gzip
+    handle_path /api/* {
+        reverse_proxy webapi:8080
+  }
+   handle {
+    file_server
+    try_files {path} /index.html
+  }
+}
+
+app.hhl-tec.com {
+    encode gzip
+    handle_path /api/* {
+        reverse_proxy webapi:8080
+  }
+   handle {
+    file_server
+    try_files {path} /index.html
+  }
+}
