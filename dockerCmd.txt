@@ -1,7 +1,3 @@
 docker push lfhenrl/hhl_testapi:alpine
 dotnet publish -t:PublishContainer --os linux-musl
  docker login -u lfhenrl  
-E:352n-dnBtHLNp  hhl79
-
-root !:1LITQ+1LITa22rXXkl        !:1 LIT Q+1 LIT a22 rXX kl
-hhl  AAA27b!-+tyMkj7res          AA 27b !-+ tyM kj7 res
