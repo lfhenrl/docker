@@ -15,6 +15,7 @@ services:
 
   webapi:
     image: lfhenrl/hhl_testapi:alpine
+    restart: unless-stopped
     expose:
       - "8080"
 
@@ -25,7 +26,7 @@ services:
       - "1433:1433"
     environment:
       - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=abcDEF123#
+      - MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD
       - TZ=Europe/Berlin
       - MSSQL_PID=Express
     volumes:
