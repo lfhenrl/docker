@@ -1,3 +1,9 @@
+@static {
+  file
+  path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
+}
+
+header @static Cache-Control max-age=5184000
 
 localhost {
     encode gzip
