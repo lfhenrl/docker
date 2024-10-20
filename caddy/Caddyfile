@@ -3,7 +3,7 @@
   path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2
 }
 
-header @static Cache-Control max-age=5184000
+
 
 localhost {
     encode gzip
@@ -22,6 +22,7 @@ app.hhl-tec.com {
         reverse_proxy webapi:8080
   }
    handle {
+    header @static Cache-Control max-age=5184000
     file_server
     try_files {path} /index.html
   }
