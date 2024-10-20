@@ -22,7 +22,6 @@ app.hhl-tec.com {
         reverse_proxy webapi:8080
   }
    handle {
-    header @static Cache-Control max-age=5184000
     file_server
     try_files {path} /index.html
   }
